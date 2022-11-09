@@ -1,0 +1,27 @@
+/* Up-Down Search Bar Effect */
+
+.upDown {
+  animation: upToDown 0.2s linear forwards;
+}
+
+.downUp {
+  animation: downToUp 0.2s linear forwards;
+}
+
+@keyframes upToDown {
+  from {
+    height: 25px;
+  }
+  to {
+    height: 80px;
+  }
+}
+
+@keyframes downToUp {
+  from {
+    height: 80px;
+  }
+  to {
+    height: 25px;
+  }
+}

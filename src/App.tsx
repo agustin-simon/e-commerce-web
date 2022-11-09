@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@chakra-ui/react";
+import Nav from "./components/nav/Nav";
+import "./App.css";
+import StickyNav from "./components/sticky-nav/StickyNav";
+import Footer from "./components/footer/Footer";
+import Home from "./pages/home/Home";
+import Balls from "./pages/balls/Balls";
+import AboutUs from "./pages/about-us/AboutUs";
+import { Routes, Route } from "react-router-dom";
+import Cart from "./pages/cart/Cart";
+import ProductDetails from "./pages/product-details/ProductDetails";
+import ProfileLogin from "./pages/profile-login/ProfileLogin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box bg="gray.100">
+      {" "}
+      <Nav />
+      <StickyNav />
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/profile-login" element={<ProfileLogin />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/balls" element={<Balls />} />
+      </Routes>
+      <Footer />
+    </Box>
   );
 }
 
